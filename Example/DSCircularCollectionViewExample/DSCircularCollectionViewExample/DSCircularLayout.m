@@ -15,15 +15,15 @@
     long cellCount;
     CGFloat maxNoOfCellsInCircle;
     
-    CGFloat startAngle;
-    CGFloat endAngle;
+    CGFloat _startAngle;
+    CGFloat _endAngle;
 }
 
 - (id)init {
     self = [super init];
     if (self) {
-        startAngle = M_PI;
-        endAngle = 0;
+        _startAngle = M_PI;
+        _endAngle = 0;
     }
     return self;
 }
@@ -35,16 +35,21 @@
     _angularSpacing = angularSpacing;
 }
 
+-(void)setStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle{
+    _startAngle = startAngle;
+    _endAngle = endAngle;
+}
+
 -(void)prepareLayout{
     [super prepareLayout];
     cellCount = [self.collectionView numberOfItemsInSection:0];
-    circumference = (startAngle - endAngle)*_radius;
+    circumference = ABS(_startAngle - _endAngle)*_radius;
     maxNoOfCellsInCircle =  circumference/(MAX(_itemSize.width, _itemSize.height) + _angularSpacing/2);
-    angleOfEachItem = (startAngle - endAngle)/maxNoOfCellsInCircle;
+    angleOfEachItem = ABS(_startAngle - _endAngle)/maxNoOfCellsInCircle;
 }
 
 -(CGSize)collectionViewContentSize{
-    CGFloat visibleAngle = startAngle - endAngle;
+    CGFloat visibleAngle = ABS(_startAngle - _endAngle);
     long remainingItemsCount = cellCount > maxNoOfCellsInCircle ? cellCount - maxNoOfCellsInCircle : 0;
     CGFloat scrollableContentWidth = (remainingItemsCount+0.5)*angleOfEachItem*_radius/(2*M_PI/visibleAngle);
     CGFloat height = _radius + (MAX(_itemSize.width, _itemSize.height)/2);
@@ -74,11 +79,11 @@
     CGFloat offsetAngle = angle;
     
     attributes.size = _itemSize;
-    CGFloat x = _centre.x + offset + _radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - startAngle);
-    CGFloat y = _centre.y + _radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - startAngle);
+    CGFloat x = _centre.x + offset + _radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
+    CGFloat y = _centre.y + _radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
     
     CGFloat cellCurrentAngle = (indexPath.item*angleOfEachItem + angleOfEachItem/2 - offsetAngle);
-    if(cellCurrentAngle >= -angleOfEachItem/2 && cellCurrentAngle <= startAngle - endAngle + angleOfEachItem/2){
+    if(cellCurrentAngle >= -angleOfEachItem/2 && cellCurrentAngle <= ABS(_startAngle - _endAngle) + angleOfEachItem/2){
         attributes.alpha = 1;
     }else{
         attributes.alpha = 0;
@@ -99,11 +104,11 @@
     CGFloat offsetAngle = angle;
     
     attributes.size = _itemSize;
-    CGFloat x = _centre.x + _radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - startAngle);
-    CGFloat y = _centre.y + offset + _radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - startAngle);
+    CGFloat x = _centre.x + _radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
+    CGFloat y = _centre.y + offset + _radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
     
     CGFloat cellCurrentAngle = indexPath.item*angleOfEachItem + angleOfEachItem/2 - offsetAngle;
-    if(cellCurrentAngle >= -angleOfEachItem/2 && cellCurrentAngle <= startAngle - endAngle + angleOfEachItem/2){
+    if(cellCurrentAngle >= -angleOfEachItem/2 && cellCurrentAngle <= ABS(_startAngle - _endAngle) + angleOfEachItem/2){
         attributes.alpha = 1;
     }else{
         attributes.alpha = 0;

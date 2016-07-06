@@ -22,4 +22,6 @@
 
 -(void)initWithCentre:(CGPoint)centre radius:(CGFloat)radius itemSize:(CGSize)itemSize andAngularSpacing:(CGFloat)angularSpacing;
 
+-(void)setStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle;
+
 @end

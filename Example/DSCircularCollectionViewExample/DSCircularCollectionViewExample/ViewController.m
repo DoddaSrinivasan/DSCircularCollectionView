@@ -29,6 +29,7 @@
                             radius:SCREEN_WIDTH/2 - ITEM_WIDTH/2
                           itemSize:CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT)
                  andAngularSpacing:20];
+    [circularLayout setStartAngle:M_PI endAngle:0];
     circularLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.collectionView setCollectionViewLayout:circularLayout];
 }
