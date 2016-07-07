@@ -11,3 +11,10 @@ You can customise the part of the circle to be visible
 - Easily stylable
 - Nice set of configuration options
 - Lightweight, simple and readable code.
+
+##Installation
+
+####Manual Installation
+
+1. Download the zip
+2. Add the files under DSCircularCollectionView into your project.
