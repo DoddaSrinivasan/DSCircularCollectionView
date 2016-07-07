@@ -19,3 +19,19 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 
 1. Download the zip
 2. Add the files under DSCircularCollectionView into your project.
+3. 
+
+##Setup
+
+```
+    DSCircularLayout *circularLayout = [[DSCircularLayout alloc] init];
+    [circularLayout initWithCentre:CGPointMake(160, 160)
+                            radius:120
+                          itemSize:CGSizeMake(50, 50)
+                 andAngularSpacing:20];
+    [circularLayout setStartAngle:M_PI endAngle:0];
+    circularLayout.mirrorX = NO;
+    circularLayout.mirrorY = NO;
+    circularLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    [collectionView setCollectionViewLayout:circularLayout];
+```
