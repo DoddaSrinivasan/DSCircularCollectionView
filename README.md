@@ -57,3 +57,8 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 #####- scrollDirection
 Based on the angle of visibility choose the scroll direction (Horizintal or Vertical). 
 For a visibility angle between M_PI to 0 horizontal scroll works, where as for M_PI/2 to 3M_PI.2 vertical scroll works. So choose scrollDirection wisely
+
+#####- mirrorX, mirrorY
+For a particular visibility angle(b/w start and end), it so happens that the scrolling behaves reverse. That is, the layout will scroll in the opposite direction to the user scroll. Supporting this odd begaviour would be too much of code with angles.
+
+The best way is to find alternate visible angle and mirror it. Simple
