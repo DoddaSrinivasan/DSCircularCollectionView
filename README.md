@@ -4,8 +4,7 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 
 <br>
 
-![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_501/v1467873039/circular_collection_view_layout.png)&nbsp;&nbsp;&nbsp;&nbsp;
-![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_488/v1467873478/circular%20collection%20view%20bottom.png)
+![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_392/v1467874733/circular%20collection%20view%20layout.png)
 
 ##Features
 
