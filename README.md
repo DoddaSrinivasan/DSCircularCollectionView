@@ -66,4 +66,4 @@ The best way is to find alternate visible angle and mirror it.
 Reverse Scroll             |  Proper Scroll
 :-------------------------:|:-------------------------:
 `[circularLayout setStartAngle:2*M_PI endAngle:M_PI]; circularLayout.mirrorX = NO; circularLayout.mirrorY = NO;`| `[circularLayout setStartAngle:M_PI endAngle:0]; circularLayout.mirrorX = NO; circularLayout.mirrorY = YES;`
-![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/defect.gif)  |  ![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/defect.gif)
+![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/defect.gif)  |  ![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/proper.gif)
