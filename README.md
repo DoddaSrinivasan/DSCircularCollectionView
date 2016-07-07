@@ -1,32 +1,3 @@
-# DSCircularCollectionView
-
-[![Version](https://img.shields.io/cocoapods/v/DSCircularCollectionView.svg?style=flat)](http://cocoapods.org/pods/DSCircularCollectionView)
-[![License](https://img.shields.io/cocoapods/l/DSCircularCollectionView.svg?style=flat)](http://cocoapods.org/pods/DSCircularCollectionView)
-[![Platform](https://img.shields.io/cocoapods/p/DSCircularCollectionView.svg?style=flat)](http://cocoapods.org/pods/DSCircularCollectionView)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-DSCircularCollectionView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "DSCircularCollectionView"
-```
-
-## Author
-
-Dodda Srinivasan, srinivasan.munna@gmail.com
-
-## License
-
-DSCircularCollectionView is available under the MIT license. See the LICENSE file for more info.
-
 # iOS Circular Collection View Layout
 Circular Collection View Layout for iOS layouts the collectionview items in a circular patterns.<br>
 You can customise the angle of the circle to be visible. Check out set up for customization
@@ -44,11 +15,18 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 
 ##Installation
 
+####Cocoa pods
+DSCircularCollectionView is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "DSCircularCollectionView"
+```
+
 ####Manual Installation
 
 1. Download the zip
 2. Add the files under DSCircularCollectionView into your project.
-
 <br>
 
 ##Setup
@@ -96,4 +74,17 @@ Reverse Scroll             |  Proper Scroll
 :-------------------------:|:-------------------------:
 `[circularLayout setStartAngle:2*M_PI endAngle:M_PI]; circularLayout.mirrorX = NO; circularLayout.mirrorY = NO;`| `[circularLayout setStartAngle:M_PI endAngle:0]; circularLayout.mirrorX = NO; circularLayout.mirrorY = YES;`
 ![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/defect.gif)  |  ![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/proper.gif)
+
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first
+
+## Author
+
+Dodda Srinivasan, srinivasan.munna@gmail.com
+
+## License
+
+DSCircularCollectionView is available under the MIT license. See the LICENSE file for more info.
 
