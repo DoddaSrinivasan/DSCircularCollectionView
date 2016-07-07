@@ -24,7 +24,7 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 
 ##Setup
 
-###Theory
+####Theory
 ![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_336/v1467878560/Circular%20collection%20view%20theory.png)
 
 ####Basic
