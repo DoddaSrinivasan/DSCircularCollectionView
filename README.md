@@ -25,6 +25,9 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 
 ##Setup
 
+###Theory
+![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_336/v1467878560/Circular%20collection%20view%20theory.png)
+
 ####Basic
 ```
     DSCircularLayout *circularLayout = [[DSCircularLayout alloc] init];
@@ -43,3 +46,4 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 *
 
 ####Advanced
+Based on the angle of visibility choose the scroll direction (Horizintal or Vertical). For example for a visibility angle between M_PI to 0 horizontal scroll works, and M_PI/2 to 3M_PI.2 vertical scroll works. So choose scrollDirection wiselt
