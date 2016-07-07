@@ -1,0 +1,6 @@
+framework module DSCircularCollectionView {
+  umbrella header "DSCircularCollectionView-umbrella.h"
+
+  export *
+  module * { export * }
+}

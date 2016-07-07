@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DSCircularCollectionView_Example' do
+  pod 'DSCircularCollectionView', :path => '../'
+
+  target 'DSCircularCollectionView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,16 @@
+PODS:
+  - DSCircularCollectionView (0.1.0)
+
+DEPENDENCIES:
+  - DSCircularCollectionView (from `../`)
+
+EXTERNAL SOURCES:
+  DSCircularCollectionView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DSCircularCollectionView: 2eeec491274fdd7eca187ba6dd3f85c9792de71b
+
+PODFILE CHECKSUM: c908d14bbfed7358c47ebbe70b606894e2d9a6fe
+
+COCOAPODS: 1.0.1
