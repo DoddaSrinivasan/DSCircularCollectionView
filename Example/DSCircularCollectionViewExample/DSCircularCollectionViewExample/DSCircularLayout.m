@@ -38,6 +38,12 @@
 -(void)setStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle{
     _startAngle = startAngle;
     _endAngle = endAngle;
+    if(_startAngle == 2*M_PI){
+        _startAngle = 2*M_PI - M_PI/180;
+    }
+    if(_endAngle == 2*M_PI){
+        _endAngle = 2*M_PI - M_PI/180;
+    }
 }
 
 -(void)prepareLayout{
@@ -79,8 +85,10 @@
     CGFloat offsetAngle = angle;
     
     attributes.size = _itemSize;
-    CGFloat x = _centre.x + offset + _radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
-    CGFloat y = _centre.y + _radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
+    int mirrorX = _mirrorX ? -1 : 1;
+    int mirrorY = _mirrorY ? -1 : 1;
+    CGFloat x = _centre.x + offset + mirrorX*(_radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle));
+    CGFloat y = _centre.y + mirrorY*(_radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle));
     
     CGFloat cellCurrentAngle = (indexPath.item*angleOfEachItem + angleOfEachItem/2 - offsetAngle);
     if(cellCurrentAngle >= -angleOfEachItem/2 && cellCurrentAngle <= ABS(_startAngle - _endAngle) + angleOfEachItem/2){
@@ -104,8 +112,10 @@
     CGFloat offsetAngle = angle;
     
     attributes.size = _itemSize;
-    CGFloat x = _centre.x + _radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
-    CGFloat y = _centre.y + offset + _radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle);
+    int mirrorX = _mirrorX ? -1 : 1;
+    int mirrorY = _mirrorY ? -1 : 1;
+    CGFloat x = _centre.x + mirrorX*(_radius*cosf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle));
+    CGFloat y = _centre.y + offset + mirrorY*(_radius*sinf(indexPath.item*angleOfEachItem - offsetAngle + angleOfEachItem/2 - _startAngle));
     
     CGFloat cellCurrentAngle = indexPath.item*angleOfEachItem + angleOfEachItem/2 - offsetAngle;
     if(cellCurrentAngle >= -angleOfEachItem/2 && cellCurrentAngle <= ABS(_startAngle - _endAngle) + angleOfEachItem/2){

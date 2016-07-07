@@ -21,15 +21,20 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setCircularLayout];
+}
+
+-(void)setCircularLayout{
     DSCircularLayout *circularLayout = [[DSCircularLayout alloc] init];
-    [circularLayout initWithCentre:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT)
+    [circularLayout initWithCentre:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
                             radius:SCREEN_WIDTH/2 - ITEM_WIDTH/2
                           itemSize:CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT)
                  andAngularSpacing:20];
     [circularLayout setStartAngle:M_PI endAngle:0];
+    circularLayout.mirrorX = NO;
+    circularLayout.mirrorY = NO;
     circularLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.collectionView setCollectionViewLayout:circularLayout];
 }
