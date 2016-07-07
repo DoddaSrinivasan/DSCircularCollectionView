@@ -45,4 +45,15 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 *
 
 ####Advanced
-Based on the angle of visibility choose the scroll direction (Horizintal or Vertical). For example for a visibility angle between M_PI to 0 horizontal scroll works, and M_PI/2 to 3M_PI.2 vertical scroll works. So choose scrollDirection wiselt
+
+```
+@property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;
+
+@property (nonatomic, assign) BOOL mirrorX;
+
+@property (nonatomic, assign) BOOL mirrorY;
+```
+
+#####- scrollDirection
+Based on the angle of visibility choose the scroll direction (Horizintal or Vertical). 
+For a visibility angle between M_PI to 0 horizontal scroll works, where as for M_PI/2 to 3M_PI.2 vertical scroll works. So choose scrollDirection wisely
