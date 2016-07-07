@@ -61,4 +61,9 @@ For a visibility angle between M_PI to 0 horizontal scroll works, where as for M
 #####- mirrorX, mirrorY
 For a particular visibility angle(b/w start and end), it so happens that the scrolling behaves reverse. That is, the layout will scroll in the opposite direction to the user scroll. Supporting this odd begaviour would be too much of code with angles.
 
-The best way is to find alternate visible angle and mirror it. Simple
+The best way is to find alternate visible angle and mirror it.
+
+Reverse Scroll             |  Proper Scroll
+:-------------------------:|:-------------------------:
+`[circularLayout setStartAngle:2*M_PI endAngle:M_PI]; circularLayout.mirrorX = NO; circularLayout.mirrorY = NO;`| `[circularLayout setStartAngle:M_PI endAngle:0]; circularLayout.mirrorX = NO; circularLayout.mirrorY = YES;`
+![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/defect.gif)  |  ![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_420/v1467884392/defect.gif)
