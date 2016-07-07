@@ -19,7 +19,6 @@ You can customise the angle of the circle to be visible. Check out set up for cu
 
 1. Download the zip
 2. Add the files under DSCircularCollectionView into your project.
-3. 
 
 <br>
 
