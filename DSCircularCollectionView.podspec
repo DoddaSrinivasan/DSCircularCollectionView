@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DSCircularCollectionView'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Sub class of UICollectionViewLayout for circular collection view'
   s.homepage         = 'https://github.com/DoddaSrinivasan/DSCircularCollectionView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
