@@ -24,6 +24,8 @@
 
 @property (nonatomic, assign) BOOL mirrorY;
 
+@property (nonatomic, assign) BOOL rotateItems;
+
 -(void)initWithCentre:(CGPoint)centre radius:(CGFloat)radius itemSize:(CGSize)itemSize andAngularSpacing:(CGFloat)angularSpacing;
 
 -(void)setStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle;

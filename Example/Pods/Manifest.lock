@@ -1,5 +1,5 @@
 PODS:
-  - DSCircularCollectionView (0.1.0)
+  - DSCircularCollectionView (1.0.0)
 
 DEPENDENCIES:
   - DSCircularCollectionView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DSCircularCollectionView: 2eeec491274fdd7eca187ba6dd3f85c9792de71b
+  DSCircularCollectionView: 56e3d11e081f11c2dbb17dbac867836508d1766e
 
 PODFILE CHECKSUM: c908d14bbfed7358c47ebbe70b606894e2d9a6fe
 

@@ -35,6 +35,7 @@
     [circularLayout setStartAngle:M_PI endAngle:0];
     circularLayout.mirrorX = NO;
     circularLayout.mirrorY = NO;
+    circularLayout.rotateItems = YES;
     circularLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.collectionView setCollectionViewLayout:circularLayout];
 }

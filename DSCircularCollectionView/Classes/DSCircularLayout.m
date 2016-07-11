@@ -99,6 +99,9 @@
     
     attributes.center = CGPointMake(x, y);
     attributes.zIndex = cellCount - indexPath.item;
+    if(_rotateItems){
+        attributes.transform = CGAffineTransformMakeRotation(cellCurrentAngle - M_PI/2);
+    }
     return attributes;
 }
 
@@ -126,6 +129,10 @@
     
     attributes.center = CGPointMake(x, y);
     attributes.zIndex = cellCount - indexPath.item;
+    if(_rotateItems){
+        attributes.transform = CGAffineTransformMakeRotation(cellCurrentAngle - M_PI/2);
+    }
+    
     return attributes;
 }
 
