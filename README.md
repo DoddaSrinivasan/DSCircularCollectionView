@@ -2,6 +2,7 @@
 Circular Collection View Layout for iOS layouts the collectionview items in a circular patterns.<br>
 You can customise the angle of the circle to be visible. Check out set up for customization
 
+
 <br>
 
 ![](http://res.cloudinary.com/dm6lqaxjt/image/upload/c_scale,h_392/v1467874733/circular%20collection%20view%20layout.png)
@@ -28,6 +29,9 @@ pod "DSCircularCollectionView"
 1. Download the zip
 2. Add the files under DSCircularCollectionView into your project.
 <br>
+
+
+#### Added insert and remove animations. Download sample to check the animations.
 
 ##Setup
 
