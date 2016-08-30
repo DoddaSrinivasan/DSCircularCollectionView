@@ -99,7 +99,7 @@
     
     attributes.center = CGPointMake(x, y);
     attributes.zIndex = cellCount - indexPath.item;
-    if(_rotateItems){
+    if(!_rotateItems){
         attributes.transform = CGAffineTransformMakeRotation(cellCurrentAngle - M_PI/2);
     }
     return attributes;
@@ -129,7 +129,7 @@
     
     attributes.center = CGPointMake(x, y);
     attributes.zIndex = cellCount - indexPath.item;
-    if(_rotateItems){
+    if(!_rotateItems){
         attributes.transform = CGAffineTransformMakeRotation(cellCurrentAngle - M_PI/2);
     }
     
@@ -143,6 +143,26 @@
         [attributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];
     }
     return attributes;
+}
+
+- (UICollectionViewLayoutAttributes*)initialLayoutAttributesForAppearingItemAtIndexPath:(NSIndexPath *)itemIndexPath
+{
+    UICollectionViewLayoutAttributes *attributes = [super initialLayoutAttributesForAppearingItemAtIndexPath:itemIndexPath];
+    attributes.center = CGPointMake(_centre.x + self.collectionView.contentOffset.x, _centre.y + self.collectionView.contentOffset.y);
+    attributes.alpha = 0.2;
+    attributes.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    return attributes;
+    
+}
+
+- (UICollectionViewLayoutAttributes*)finalLayoutAttributesForDisappearingItemAtIndexPath:(NSIndexPath *)itemIndexPath
+{
+    UICollectionViewLayoutAttributes *attributes = [super finalLayoutAttributesForDisappearingItemAtIndexPath:itemIndexPath];
+    attributes.center = CGPointMake(_centre.x + self.collectionView.contentOffset.x, _centre.y + self.collectionView.contentOffset.y);
+    attributes.alpha = 0.2;
+    attributes.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    return attributes;
+    
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{

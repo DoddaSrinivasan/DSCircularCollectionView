@@ -15,7 +15,9 @@
 #define ITEM_WIDTH 50
 #define ITEM_HEIGHT 50
 
-@interface DSViewController ()
+@interface DSViewController (){
+    int count;
+}
 
 @end
 
@@ -23,7 +25,30 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    count = 0;
     [self setCircularLayout];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObjects:
+                                                      [NSIndexPath indexPathForRow:0 inSection:0],
+                                                      [NSIndexPath indexPathForRow:1 inSection:0],
+                                                      [NSIndexPath indexPathForRow:2 inSection:0],
+                                                      [NSIndexPath indexPathForRow:3 inSection:0],
+                                                      [NSIndexPath indexPathForRow:4 inSection:0],
+                                                      [NSIndexPath indexPathForRow:5 inSection:0],
+                                                      [NSIndexPath indexPathForRow:6 inSection:0],
+                                                      [NSIndexPath indexPathForRow:7 inSection:0],
+                                                      [NSIndexPath indexPathForRow:8 inSection:0],
+                                                      [NSIndexPath indexPathForRow:9 inSection:0],
+                                                      nil]];
+        count = 10;
+    } completion:^(BOOL finished) {
+        [self.collectionView reloadData];
+    }];
 }
 
 -(void)setCircularLayout{
@@ -36,12 +61,12 @@
     circularLayout.mirrorX = NO;
     circularLayout.mirrorY = NO;
     circularLayout.rotateItems = YES;
-    circularLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    circularLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     [self.collectionView setCollectionViewLayout:circularLayout];
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 50;
+    return count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
