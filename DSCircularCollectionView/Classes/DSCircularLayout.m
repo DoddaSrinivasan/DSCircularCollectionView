@@ -57,7 +57,7 @@
 -(CGSize)collectionViewContentSize{
     CGFloat visibleAngle = ABS(_startAngle - _endAngle);
     long remainingItemsCount = cellCount > maxNoOfCellsInCircle ? cellCount - maxNoOfCellsInCircle : 0;
-    CGFloat scrollableContentWidth = (remainingItemsCount+0.5)*angleOfEachItem*_radius/(2*M_PI/visibleAngle);
+    CGFloat scrollableContentWidth = (remainingItemsCount+1)*angleOfEachItem*_radius/(2*M_PI/visibleAngle);
     CGFloat height = _radius + (MAX(_itemSize.width, _itemSize.height)/2);
     
     if(_scrollDirection == UICollectionViewScrollDirectionVertical)
@@ -140,7 +140,10 @@
     NSMutableArray<__kindof UICollectionViewLayoutAttributes *> *attributes = [NSMutableArray array];
     for(NSInteger i=0; i < cellCount; i++){
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        [attributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];
+        UICollectionViewLayoutAttributes *cellAttributes = [self layoutAttributesForItemAtIndexPath:indexPath];
+        if(CGRectIntersectsRect(rect, cellAttributes.frame) && cellAttributes.alpha != 0){
+            [attributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];
+        }
     }
     return attributes;
 }

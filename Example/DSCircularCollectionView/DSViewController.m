@@ -44,8 +44,18 @@
                                                       [NSIndexPath indexPathForRow:7 inSection:0],
                                                       [NSIndexPath indexPathForRow:8 inSection:0],
                                                       [NSIndexPath indexPathForRow:9 inSection:0],
+                                                      [NSIndexPath indexPathForRow:10 inSection:0],
+                                                      [NSIndexPath indexPathForRow:11 inSection:0],
+                                                      [NSIndexPath indexPathForRow:12 inSection:0],
+                                                      [NSIndexPath indexPathForRow:13 inSection:0],
+                                                      [NSIndexPath indexPathForRow:14 inSection:0],
+                                                      [NSIndexPath indexPathForRow:15 inSection:0],
+                                                      [NSIndexPath indexPathForRow:16 inSection:0],
+                                                      [NSIndexPath indexPathForRow:17 inSection:0],
+                                                      [NSIndexPath indexPathForRow:18 inSection:0],
+                                                      [NSIndexPath indexPathForRow:19 inSection:0],
                                                       nil]];
-        count = 10;
+        count = 20;
     } completion:^(BOOL finished) {
         [self.collectionView reloadData];
     }];
@@ -53,7 +63,7 @@
 
 -(void)setCircularLayout{
     DSCircularLayout *circularLayout = [[DSCircularLayout alloc] init];
-    [circularLayout initWithCentre:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    [circularLayout initWithCentre:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT)
                             radius:SCREEN_WIDTH/2 - ITEM_WIDTH/2
                           itemSize:CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT)
                  andAngularSpacing:20];
@@ -61,7 +71,7 @@
     circularLayout.mirrorX = NO;
     circularLayout.mirrorY = NO;
     circularLayout.rotateItems = YES;
-    circularLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    circularLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.collectionView setCollectionViewLayout:circularLayout];
 }
 
