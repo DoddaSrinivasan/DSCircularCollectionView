@@ -17,6 +17,8 @@
     
     CGFloat _startAngle;
     CGFloat _endAngle;
+    
+    BOOL _isCountingWidth;
 }
 
 - (id)init {
@@ -28,11 +30,12 @@
     return self;
 }
 
--(void)initWithCentre:(CGPoint)centre radius:(CGFloat)radius itemSize:(CGSize)itemSize andAngularSpacing:(CGFloat)angularSpacing{
+-(void)initWithCentre:(CGPoint)centre radius:(CGFloat)radius itemSize:(CGSize)itemSize andAngularSpacing:(CGFloat)angularSpacing isCountingWidth:(BOOL)isCountingWidth {
     _centre = centre;
     _radius = radius;
     _itemSize = itemSize;
     _angularSpacing = angularSpacing;
+    _isCountingWidth = isCountingWidth;
 }
 
 -(void)setStartAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle{
@@ -50,7 +53,12 @@
     [super prepareLayout];
     cellCount = [self.collectionView numberOfItemsInSection:0];
     circumference = ABS(_startAngle - _endAngle)*_radius;
-    maxNoOfCellsInCircle =  circumference/(MAX(_itemSize.width, _itemSize.height) + _angularSpacing/2);
+    
+    if _isCountingWidth {
+        maxNoOfCellsInCircle =  circumference/(MAX(_itemSize.width, _itemSize.height) + _angularSpacing/2);
+    } else {
+        maxNoOfCellsInCircle =  circumference/(_itemSize.height + _angularSpacing/2);
+    }
     angleOfEachItem = ABS(_startAngle - _endAngle)/maxNoOfCellsInCircle;
 }
 
