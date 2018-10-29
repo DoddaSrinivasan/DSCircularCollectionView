@@ -54,7 +54,7 @@
     cellCount = [self.collectionView numberOfItemsInSection:0];
     circumference = ABS(_startAngle - _endAngle)*_radius;
     
-    if _isCountingWidth {
+    if (_isCountingWidth) {
         maxNoOfCellsInCircle =  circumference/(MAX(_itemSize.width, _itemSize.height) + _angularSpacing/2);
     } else {
         maxNoOfCellsInCircle =  circumference/(_itemSize.height + _angularSpacing/2);
